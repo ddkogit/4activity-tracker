@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Task from "./components/Task";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activity, setActivity] = useState("");
+  const [month, setMonth] = useState("");
+  const [count, setCount] = useState([]);
+
+  var monthsFull = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const date = new Date();
+  const today = monthsFull[date.getMonth()];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setMonth(today);
+
+    setCount((prevData) => setCount([...prevData, { activity, today }]));
+
+    setActivity("");
+  };
+
+  const handleDelete = (index) => {
+    setCount((prevData)=>prevData.filter((_,i)=>i!==index));
+  };
+
+
+  useEffect(()=>{
+    
+
+  },[count])
 
   return (
     <>
+      <h2>Monthly Activity Tracker !</h2>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="e.g. coding"
+            value={activity}
+            onChange={(e) => setActivity(e.target.value)}
+          />
+          <button>Add Activity</button>
+        </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {count &&
+        count.map((card, index) => (
+          <Task
+          key={index}
+            index={index}
+            handleDelete={handleDelete}
+            activity={card.activity}
+            today={card.today}
+          />
+        ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
