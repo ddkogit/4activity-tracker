@@ -4,7 +4,7 @@ function SingleDate({ item }) {
   const [color, setColor] = useState("");
 
   const toggleClass = (e) => {
-    setColor(color === "" ? "blue" : "");
+    setColor(color === "" ? "rgb(76, 198, 219)" : "");
   };
   return (
     <div >
@@ -13,7 +13,7 @@ function SingleDate({ item }) {
         onClick={toggleClass}
         style={{
           backgroundColor: color,
-          cursor: "pointer",
+         
         }}
       >
         {item}

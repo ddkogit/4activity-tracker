@@ -13,19 +13,14 @@ function Task({activity,today,handleDelete,index}) {
     
 
   return (
-    <div style={{
-        display:"flex"
-    }}>
+    <div className='card'>
 
 
-    <div className='left' style={{
-        height:"200px",
-        backgroundColor:"aqua",
-        width:"150px"
-    }}>
+    <div className='left' >
         <p>{activity}</p>
         <p>{today}</p>
         </div>
+        
       <div className='right'>
         {
             date.map((item)=>(

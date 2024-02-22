@@ -22,10 +22,6 @@ function App() {
     localStorage.setItem("count", JSON.stringify([...count]));
   }, [count]);
 
-
-
-
-
   var monthsFull = [
     "January",
     "February",
@@ -60,24 +56,22 @@ function App() {
     setCount((prevData) => prevData.filter((_, i) => i !== index));
   };
 
-  useEffect(() => {}, [count]);
-
   return (
     <>
-    <div className="title">
-
-      <h2 className="heading">Monthly Activity Tracker !</h2>
-      <div>
-        <form onSubmit={handleSubmit} className="form">
-          <input className="input"
-            type="text"
-            placeholder="e.g. coding"
-            value={activity}
-            onChange={(e) => setActivity(e.target.value)}
+      <div className="title">
+        <h2 className="heading">Monthly Activity Tracker !</h2>
+        <div>
+          <form onSubmit={handleSubmit} className="form">
+            <input
+              className="input"
+              type="text"
+              placeholder="e.g. coding"
+              value={activity}
+              onChange={(e) => setActivity(e.target.value)}
             />
-          <button className="add">Add Activity</button>
-        </form>
-            </div>
+            <button className="add">Add Activity</button>
+          </form>
+        </div>
       </div>
       {count &&
         count.map((card, index) => (
