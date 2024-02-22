@@ -28,7 +28,7 @@ function Task({activity,today,handleDelete,index}) {
             ))
         }
 
-        <button  onClick={()=>handleDelete(index)}>X</button>
+        <button  onClick={()=>handleDelete(index)} className='danger' >X</button>
 
     </div>
     </div>
