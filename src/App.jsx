@@ -30,6 +30,10 @@ function App() {
     e.preventDefault();
     setMonth(today);
 
+    if(activity===""){
+      return
+    }
+
     setCount((prevData) => setCount([...prevData, { activity, today }]));
 
     setActivity("");
