@@ -29,7 +29,7 @@ function Task({activity,today,handleDelete,index}) {
       <div className='right'>
         {
             date.map((item)=>(
-              <SingleDate  item={item}/>
+              <SingleDate  item={item} key={item}/>
             ))
         }
 

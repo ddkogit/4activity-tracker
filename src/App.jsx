@@ -9,6 +9,21 @@ function App() {
   const [month, setMonth] = useState("");
   const [count, setCount] = useState([]);
 
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const storedCount = localStorage.getItem("count");
+    console.log("Retrieved from localStorage:", storedCount);
+    if (storedCount) {
+      setCount((prevData) => [...prevData, ...JSON.parse(storedCount)]);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("Storing in localStorage:", count);
+    localStorage.setItem("count", JSON.stringify([...count]));
+  }, [count]);
+
   var monthsFull = [
     "January",
     "February",
@@ -30,8 +45,8 @@ function App() {
     e.preventDefault();
     setMonth(today);
 
-    if(activity===""){
-      return
+    if (activity === "") {
+      return;
     }
 
     setCount((prevData) => setCount([...prevData, { activity, today }]));
@@ -40,14 +55,10 @@ function App() {
   };
 
   const handleDelete = (index) => {
-    setCount((prevData)=>prevData.filter((_,i)=>i!==index));
+    setCount((prevData) => prevData.filter((_, i) => i !== index));
   };
 
-
-  useEffect(()=>{
-    
-
-  },[count])
+  useEffect(() => {}, [count]);
 
   return (
     <>
@@ -66,7 +77,7 @@ function App() {
       {count &&
         count.map((card, index) => (
           <Task
-          key={index}
+            key={index}
             index={index}
             handleDelete={handleDelete}
             activity={card.activity}
