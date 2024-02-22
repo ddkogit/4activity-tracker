@@ -1,6 +1,9 @@
-
-.form{
-    display: flex;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+body{
+  font-family: "Roboto", sans-serif;
+}
+.form {
+  display: flex;
 }
 
 .title {
@@ -21,57 +24,48 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.add{
-    border: none;
-    padding: 5px 20px;
-    border-radius: 5px;
-    background-color: rgb(76, 198, 219);
-    color: white;
+.add {
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: rgb(76, 198, 219);
+  color: white;
 }
 
 .single-date {
-    border: 1px solid gray;
-    padding: 10px;
-    border-radius: 5px;
-    background: none;
-    width: 40px;
-    cursor: pointer;
-  }
- 
-  .card{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    gap:50px;
-    padding: 20px;
-    
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    
-   }
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+  background: none;
+  width: 40px;
+  cursor: pointer;
+}
 
+.card {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 50px;
+  padding: 20px;
 
-.left{
- 
-  background-color:rgb(199, 218, 218);
-  width:25%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.left {
+  background-color: rgb(199, 218, 218);
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
-  
- 
-
 }
 
-  .right{
-    display: grid;
-    grid-template-columns: repeat(9,1fr);
-    gap: 10px;
- }
- .activityTo{
+.right {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+}
+.activityTo {
   font-size: 3rem;
- }
-
- 
-  
+font-weight: 700;
+}
