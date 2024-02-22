@@ -69,6 +69,9 @@
     grid-template-columns: repeat(9,1fr);
     gap: 10px;
  }
+ .activityTo{
+  font-size: 3rem;
+ }
 
  
   

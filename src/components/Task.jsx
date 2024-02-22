@@ -17,7 +17,7 @@ function Task({activity,today,handleDelete,index}) {
 
 
     <div className='left' >
-        <p>{activity}</p>
+        <h1 className='activityTo'>{activity}</h1>
         <p>{today}</p>
         </div>
         
