@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Task({activity,today,handleDelete,index}) {
 
+
+    const dateArray = Array.from({length:31},(_,index)=>index+1);
+
+    const [date,setDate] = useState(dateArray);
+    const [color,setColor] = useState('');
+
+
+    const toggleClass=()=>{
+
+    }
 
   return (
     <div style={{
@@ -11,13 +21,15 @@ function Task({activity,today,handleDelete,index}) {
     }}>
         <p>{activity}</p>
         <p>{today}</p>
+      
         {
-         Array.from({length:31}.map((_,index)=>(
-            <div key={index}>
-                <button>{index+1}</button>
-            </div>
-        )))
-    }
+            date.map((item)=>(
+                <button onClick={toggleClass} style={{
+                    backgroundColor:color
+                }} >{item}</button>
+            ))
+        }
+
         <button  onClick={()=>handleDelete(index)}>X</button>
 
     </div>
