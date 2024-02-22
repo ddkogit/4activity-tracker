@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SingleDate from './SingleDate';
 
 function Task({activity,today,handleDelete,index}) {
 
@@ -6,12 +7,9 @@ function Task({activity,today,handleDelete,index}) {
     const dateArray = Array.from({length:31},(_,index)=>index+1);
 
     const [date,setDate] = useState(dateArray);
-    const [color,setColor] = useState('');
 
 
-    const toggleClass=()=>{
-
-    }
+    
 
   return (
     <div style={{
@@ -24,9 +22,7 @@ function Task({activity,today,handleDelete,index}) {
       
         {
             date.map((item)=>(
-                <button onClick={toggleClass} style={{
-                    backgroundColor:color
-                }} >{item}</button>
+              <SingleDate  item={item}/>
             ))
         }
 
