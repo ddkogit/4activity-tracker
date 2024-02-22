@@ -44,19 +44,22 @@ body{
   cursor: pointer;
 }
 
+
 .card {
+  width: 1000px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
   gap: 50px;
   padding: 20px;
-
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 
 .left {
   background-color: rgb(199, 218, 218);
-  width: 25%;
+  min-width:250px;
   display: flex;
   flex-direction: column;
   align-items: center;
